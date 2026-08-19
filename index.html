@@ -21,7 +21,26 @@
     and public video performance.
   </p>
 
-  <button type="button">Connect with TikTok</button>
+  <button id="tiktok-login" type="button">Connect with TikTok</button>
+
+<script>
+  document.getElementById("tiktok-login").addEventListener("click", function () {
+    const clientKey = "awv1tcg7ki59nn18";
+    const redirectUri = "https://bantony22.github.io/france-news-today-analytics/callback.html";
+    const scope = "user.info.basic,user.info.stats,video.list";
+    const state = "france_news_today_analytics";
+
+    const authUrl =
+      "https://www.tiktok.com/v2/auth/authorize/" +
+      "?client_key=" + encodeURIComponent(clientKey) +
+      "&scope=" + encodeURIComponent(scope) +
+      "&response_type=code" +
+      "&redirect_uri=" + encodeURIComponent(redirectUri) +
+      "&state=" + encodeURIComponent(state);
+
+    window.location.href = authUrl;
+  });
+</script>
 
   <hr>
 
