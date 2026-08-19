@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Authorization - France News Today Analytics</title>
+</head>
+
+<body>
+  <h1>France News Today Analytics</h1>
+  <h2>TikTok Authorization</h2>
+
+  <p id="status">Processing TikTok authorization...</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const error = params.get("error");
+
+    if (code) {
+      document.getElementById("status").textContent =
+        "TikTok authorization successful. Authorization code received.";
+    } else if (error) {
+      document.getElementById("status").textContent =
+        "TikTok authorization was not completed: " + error;
+    } else {
+      document.getElementById("status").textContent =
+        "No TikTok authorization response was received.";
+    }
+  </script>
+
+  <p><a href="index.html">Return to France News Today Analytics</a></p>
+</body>
+</html>
